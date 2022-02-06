@@ -1,5 +1,7 @@
 import { terser } from "rollup-plugin-terser";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
+import json from "@rollup/plugin-json";
 import ts from "rollup-plugin-ts";
 
 export default {
@@ -10,6 +12,5 @@ export default {
       format: "esm",
     },
   ],
-  plugins: [ts(), nodeResolve(), terser()],
-  external: ["undici"],
+  plugins: [json(), ts(), nodeResolve(), commonjs(), terser()],
 };
