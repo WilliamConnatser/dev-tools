@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Update package list
+sudo apt-get update
+
+# Install git
+sudo apt-get -y install git
+
+# Install Vagrant
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+sudo apt-get -y install vagrant
+vagrant plugin install vagrant-reload
